@@ -1,0 +1,23 @@
+<%= render :partial => "songs/song_template" %>
+
+<h1 class="<%= user.id %>">Hello <%= user.email %>!</h1>
+<form action="session" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="hidden" name="authenticity_token" value="form_authenticity_token">
+	<button>Logout</button>
+</form>
+
+
+<label>Add a song!
+<input id="name"><button id="rock_it">Do it for Rock and Roll!</button>
+</label>
+
+<div id="list">
+<% Song.all.each do |song| %>
+	<div id="<%= song.id %>">
+		<span class="title"><%= song.name %></span>
+		<button class="delete">Delete</button>
+		<button class="like">Like</button>
+	</div>
+<% end %>
+</div>
