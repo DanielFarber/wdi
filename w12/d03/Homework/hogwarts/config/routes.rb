@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   put "/students/:id" => "students#update"
   get "/houses/:id" => "houses#show"
   get "/hogwarts" => "hogwarts#show"
-  post "/hogwarts/:id" =>  "student#create"
+  post "/houses/:id" =>  "students#create"
+  # get "/students" =>
 
 end
